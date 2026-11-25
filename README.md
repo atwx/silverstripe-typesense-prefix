@@ -23,7 +23,11 @@ TYPESENSE_COLLECTION_PREFIX="stg_"
   the update on write uses the first record of a class. After copying the database from live,
   the live records would otherwise make staging write into the live collections. With the
   filter, the sync task simply creates the prefixed records from the YAML config.
-- Without the variable (or empty) nothing changes, so live usually keeps its names.
+- Without the variable (or empty) nothing changes, so live usually keeps its names. Such an
+  installation also sees the records of prefixed ones; that only matters when a database is
+  copied from staging to live, so do not do that without cleaning up `TypesenseCollection`.
+- Collections are created from the YAML config. Fields that were only added in the CMS exist
+  only in that database: keep the YAML complete, or a new installation gets a smaller schema.
 
 ## Installation
 
