@@ -4,10 +4,9 @@ Gives each installation of a site its own collections on a shared Typesense serv
 [elliotsawyer/silverstripe-typesense](https://codeberg.org/0x/silverstripe-typesense) 2.x
 (Silverstripe 6; release 2.x or the branch `upgrade/6`).
 
-Note: release 2.0.2 sends `num_dim: 0` for every field, which Typesense 29 rejects, so new
-collections cannot be created (and the CMS action "Sync with Typesense" deletes an existing
-collection before failing to recreate it). Projects on Typesense 29 stay on `dev-upgrade/6`
-until that is fixed upstream.
+Note: release 2.x sends `num_dim: 0` for every field. Typesense 29 and 30 accept that, but old
+servers such as 0.25 (still found in some ddev setups) reject it, so local collections cannot
+be created there. Use Typesense 29 or newer locally as well.
 
 Typesense has no namespaces: collection names are global per server, and API keys only
 restrict which names a key may use. Live, staging and test of one project therefore need
