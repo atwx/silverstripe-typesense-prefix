@@ -1,0 +1,6 @@
+---
+Name: atwx-typesense-prefix
+---
+ElliotSawyer\SilverstripeTypesense\Collection:
+  extensions:
+    - Atwx\TypesensePrefix\CollectionPrefixFilter
